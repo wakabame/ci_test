@@ -16,9 +16,7 @@ jobs:
       - name: Check if src/*.jl or test/*.jl changed
         id: diff
         run: |
-          # git diff の比較対象をどうするかは運用に合わせて調整してください
-          # 例として HEAD~1 と HEAD を比較
-          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
+          CHANGED_FILES=$(git diff --name-only origin/main HEAD)
 
           echo "Changed files:"
           echo "$CHANGED_FILES"
