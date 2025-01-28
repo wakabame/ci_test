@@ -17,7 +17,7 @@ jobs:
       - name: Check if src/*.jl or test/*.jl changed
         id: diff
         run: |
-          CHANGED_FILES=$(git diff --name-only origin/main HEAD)
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }} HEAD)
 
           echo "Changed files:"
           echo "$CHANGED_FILES"
