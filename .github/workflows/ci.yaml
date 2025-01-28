@@ -14,6 +14,8 @@ jobs:
       changed: ${{ steps.diff.outputs.changed }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Check if src/*.jl or test/*.jl changed
         id: diff
         run: |
